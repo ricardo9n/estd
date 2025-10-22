@@ -32,7 +32,7 @@ class DequeArray:
 
     def delete_first(self):
         if self.is_empty():
-            raise FilaVazia('O Deque está vazio')
+            raise DequeVazio('O Deque está vazio')
         result = self._dados[self._inicio]
         self._dados[self._inicio] = None
         self._inicio = (self._inicio + 1) % len(self._dados)  # Move o início para frente
@@ -91,16 +91,17 @@ if __name__ == "__main__":
     deque.add_first(10)   # Adiciona 10 no início
     deque.add_last(20)    # Adiciona 20 no final
     deque.add_first(5)    # Adiciona 5 no início
+    deque.add_last(30)    # Adiciona 30 no final
+
     print(deque)          # Esperado: [5, 10, 20, 30] tamanho: 4 capacidade 5
 
-    deque.add_last(30)    # Adiciona 30 no final
     deque.add_first(10)   # Adiciona 10 no início
     deque.add_last(20)    # Adiciona 20 no final
     deque.add_first(5)    # Adiciona 5 no início
     deque.add_last(30)    # Adiciona 30 no final
 
-    print(deque)          # Esperado: [5, 10, 20, 30] tamanho: 4 capacidade 5
+    print(deque)          # Esperado: [5, 10, 5, 10, 20, 30, 20, 30, ] tamanho: 8 capacidade 10
 
     print(deque.delete_first())  # Esperado: 5
     print(deque.delete_last())   # Esperado: 30
-    print(deque)                 # Esperado: [10, 20] tamanho: 2 capacidade 5
+    print(deque)                 # Esperado: [10, 5, 10, 20, 30, 20, ] tamanho: 6 capacidade 10

@@ -1,15 +1,15 @@
 #lista_candidato1.py
-TAMANHO_MAX = 4
+CAPACIDADE_LISTA = 4
 
 def adiciona(valor, lista):
-	for i in range(TAMANHO_MAX) :
+	for i in range(CAPACIDADE_LISTA) :
 		if lista[i] == None:
 			lista[i] = valor
 			break
 
 def adiciona_na_posicao(posicao,valor, lista):
 	novo_valor = valor
-	for i in range(posicao, TAMANHO_MAX) :
+	for i in range(posicao, CAPACIDADE_LISTA) :
 		temp = lista[i]
 		lista[i] = novo_valor
 		novo_valor = temp
@@ -18,14 +18,14 @@ def pega(posicao,lista):
 	return lista[posicao]
 
 def contem(candidato,lista):
-	for i in range(TAMANHO_MAX) :
+	for i in range(CAPACIDADE_LISTA) :
 		if candidato == lista[i]: return i
 	return None
 
 def tamanho(lista):
-	for i in range(TAMANHO_MAX) :
+	for i in range(CAPACIDADE_LISTA) :
 		if lista[i] == None: return i
-	return TAMANHO_MAX
+	return CAPACIDADE_LISTA
 
 def imprime(lista):
 	result = "["

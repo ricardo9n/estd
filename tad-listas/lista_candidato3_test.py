@@ -9,13 +9,13 @@ def teste_inserir_no_final_da_lista():
 	cand1.nome = "Joao"
 	cand2.nome = "Maria"
 
-	l = Lista_candidato()
+	lista1 = Lista_candidato()
 	lista2 = Lista_candidato()
-	l.adiciona(cand1)
-	l.adiciona(cand2)
+	lista1.adiciona(cand1)
+	lista1.adiciona(cand2)
 
-	print(l)
-	print(len(l))
+	print(lista1)
+	print(len(lista1))
 
 	l2 = Lista_candidato()
 	len(l2)
@@ -29,4 +29,5 @@ def teste_inserir_no_final_da_lista():
 
 	#Deve imprimir "[Joao, Maria]"
 
-teste_inserir_no_final_da_lista()
+if __name__ == '__main__':
+	teste_inserir_no_final_da_lista()

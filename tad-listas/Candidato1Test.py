@@ -3,11 +3,11 @@ from Candidato1 import *
 
 a = Candidato()
 a.nome = "Joao"
-a.pontuacao = "9"
+a.pontuacao = 9
 
 b = Candidato()
 b.nome = "Maria"
-b.pontuacao = "10"
+b.pontuacao = 10
 
 c = Candidato()
 

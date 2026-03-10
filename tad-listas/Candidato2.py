@@ -12,10 +12,11 @@ class Candidato:
 		else:
 			return False
 
-a = Candidato('Ricardo',100)
-b = Candidato('Ricardo',40)
+if __name__ == '__main__':
+	a = Candidato('Ricardo',100)
+	b = Candidato('Ricardo',40)
 
-print(a.nome)
-print(a.pontuacao)
-print(a.eh_vencedor())
-print(b.eh_vencedor())
+	print(a.nome)
+	print(a.pontuacao)
+	print(a.eh_vencedor())
+	print(b.eh_vencedor())

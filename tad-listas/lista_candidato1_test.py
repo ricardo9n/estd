@@ -57,4 +57,4 @@ def teste_inserir_posicao_da_lista():
 	#Deve imprimir "[Jose, Joao, Maria]"
 
 teste_inserir_no_final_da_lista() #1
-#teste_inserir_posicao_da_lista()  #2
+teste_inserir_posicao_da_lista()  #2

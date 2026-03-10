@@ -4,12 +4,12 @@ from Candidato1 import *
 
 class Lista_candidato:
 	def __init__(self):
-		self.TAMANHO_MAX = 5
+		self.CAPACIDADE_LISTA = 5
 		self.lista = [None, None, None, None, None]
 		self.tamanho_lista = 0
 
 	def adiciona(self, valor):
-		if self.tamanho_lista < self.TAMANHO_MAX:
+		if self.tamanho_lista < self.CAPACIDADE_LISTA:
 			self.lista[self.tamanho_lista] = valor
 			self.tamanho_lista += 1
 
@@ -30,9 +30,8 @@ class Lista_candidato:
 
 	def __str__(self):
 		result = "["
-		i = 0
 		for c in self.lista:
-			if c == None: break
+			if c is None: break
 			result += str(c) + ", "
 		result += "]"
 		#print(result)

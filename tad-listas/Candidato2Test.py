@@ -1,7 +1,7 @@
 from Candidato2 import *
 
-a = Candidato("Joao", "9")
-b = Candidato("Maria", "10")
+a = Candidato("Joao", 9)
+b = Candidato("Maria", 10)
 #c = Candidato() #erro
 
 print(a.nome, a.pontuacao)

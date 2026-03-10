@@ -1,18 +1,18 @@
 #lista_candidato2.py
 
-TAMANHO_MAX = 4
+CAPACIDADE_LISTA = 4
 
 tamanho_lista = 0
 
 def adiciona(valor,lista):
 	global tamanho_lista
-	if tamanho_lista < TAMANHO_MAX:
+	if tamanho_lista < CAPACIDADE_LISTA:
 		lista[tamanho_lista] = valor
 		tamanho_lista += 1
 
 def adiciona_na_posicao(posicao,valor, lista):
 	novo_valor = valor
-	for i in range(posicao, TAMANHO_MAX) :
+	for i in range(posicao, CAPACIDADE_LISTA) :
 		temp = lista[i]
 		lista[i] = novo_valor
 		novo_valor = temp

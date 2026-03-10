@@ -26,7 +26,7 @@ class Lista_candidato:
 		pass
 
 	def tamanho(self):
-		return self.tamanho
+		return self.tamanho_lista
 
 	def __str__(self):
 		result = "["

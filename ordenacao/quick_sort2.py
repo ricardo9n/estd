@@ -1,17 +1,21 @@
 def quickSort(uma_lista):
-   quickSortHelper(uma_lista,0,len(uma_lista)-1)
+   quickSortHelper(uma_lista,0,len(uma_lista)-1,0)
 
-def quickSortHelper(uma_lista,primeiro,ultimo):
+def quickSortHelper(uma_lista,primeiro,ultimo,tabs):
    if primeiro<ultimo:
+       tabs += 1
+       splitpoint = partitionp(uma_lista,primeiro,ultimo,tabs)
+       print(f'{"\t"*tabs}split: {uma_lista[splitpoint]} <- {splitpoint}')
+       quickSortHelper(uma_lista,primeiro,splitpoint-1,tabs)
+       quickSortHelper(uma_lista,splitpoint+1,ultimo,tabs)
 
-       splitpoint = partitionu(uma_lista,primeiro,ultimo)
 
-       quickSortHelper(uma_lista,primeiro,splitpoint-1)
-       quickSortHelper(uma_lista,splitpoint+1,ultimo)
-
-
-def partitionp(uma_lista,primeiro,ultimo):
+def partitionp(uma_lista,primeiro,ultimo, tabs=1):
    pivot = uma_lista[primeiro]
+
+   print("="*60)
+   print(f'{"\t"*tabs}nivel: {tabs}')
+   print(f'{"\t"*tabs}antes: {uma_lista[primeiro:ultimo+1]}')
 
    leftmark = primeiro+1
    rightmark = ultimo
@@ -35,11 +39,19 @@ def partitionp(uma_lista,primeiro,ultimo):
    temp = uma_lista[primeiro]
    uma_lista[primeiro] = uma_lista[rightmark]
    uma_lista[rightmark] = temp
-   print(uma_lista)
-   return leftmark
 
-def partitionu(uma_lista,primeiro,ultimo):
+   print(f'{"\t"*tabs}left: {uma_lista[primeiro:rightmark]}')
+   print(f'{"\t"*tabs}pivot: ({pivot}) ({leftmark}<>{rightmark}) -> ({uma_lista[leftmark]}<>{uma_lista[rightmark]})')
+   print(f'{"\t"*tabs}right: {uma_lista[rightmark+1:ultimo+1]}')
+   print(f'{"\t"*tabs}depois: {uma_lista[primeiro:ultimo+1]}')
+   return rightmark
+
+def partitionu(uma_lista,primeiro,ultimo, tabs=1):
    pivot = uma_lista[ultimo]
+
+   # print("="*60)
+   print(f'{"\t"*tabs}nivel: {tabs}')
+   print(f'{"\t"*tabs}antes: {uma_lista[primeiro:ultimo+1]}')
 
    leftmark = primeiro
    rightmark = ultimo-1
@@ -63,18 +75,20 @@ def partitionu(uma_lista,primeiro,ultimo):
    temp = uma_lista[ultimo]
    uma_lista[ultimo] = uma_lista[leftmark]
    uma_lista[leftmark] = temp
-   print(uma_lista)
+
+   print(f'{"\t"*tabs}left: {uma_lista[primeiro:leftmark]}')
+   print(f'{"\t"*tabs}pivot: ({pivot}) ({leftmark}<>{rightmark}) -> ({uma_lista[leftmark]}<>{uma_lista[rightmark]})')
+   print(f'{"\t"*tabs}right: {uma_lista[leftmark+1:ultimo+1]}')
+   print(f'{"\t"*tabs}depois: {uma_lista[primeiro:ultimo+1]}')
+
    return leftmark
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        lista = list(map(int, sys.argv[1:]))
-        print(lista)
+    def ordena(lista):
         quickSort(lista)
-        print(lista)
-    else:
-        uma_lista = [54,26,93,17,77,31,44,55,20]
-        uma_lista = [14, 17, 13, 15, 19, 10, 3, 16, 9, 12] 
-        quickSort(uma_lista)
-        # print(uma_lista)
+
+    import sys
+    uma_lista = [46, 7, 81, 23, 14, 59, 33, 72, 18]
+    if len(sys.argv) > 1:
+        uma_lista = list(map(int, sys.argv[1:]))
+    ordena(uma_lista)

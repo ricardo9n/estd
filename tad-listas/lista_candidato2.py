@@ -12,7 +12,7 @@ def adiciona(valor,lista):
 
 def adiciona_na_posicao(posicao,valor, lista):
 	novo_valor = valor
-	for i in range(posicao, CAPACIDADE_LISTA) :
+	for i in range(posicao, tamanho_lista) :
 		temp = lista[i]
 		lista[i] = novo_valor
 		novo_valor = temp
